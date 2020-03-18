@@ -15,6 +15,6 @@ public interface StudentDAO {
     @Insert
     void insert(Student student);
 
-    @Delete
-    void delete(Student student);
+    @Query("DELETE FROM student WHERE name = :studentName")
+    int delete(String studentName);
 }
