@@ -2,11 +2,25 @@ package com.example.myapplication;
 
 import android.os.AsyncTask;
 
+import java.util.List;
+import java.util.concurrent.ExecutionException;
+
 public class StudentRepository {
     private Database database;
 
     public StudentRepository() {
         database = ApplicationController.getDatabase();
+    }
+
+    public List<Student> findAll(){
+        try {
+            return new FindTask().execute().get();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     public void remove(final Student student, final OnStudentRepositoryActionListener listener){
@@ -61,5 +75,14 @@ public class StudentRepository {
             super.onCancelled();
             listener.actionFailed();
         }
+    }
+
+    private class FindTask extends AsyncTask<Void, Void, List<Student>> {
+
+        @Override
+        protected List<Student> doInBackground(Void... voids) {
+            return database.studentDAO().findAll();
+        }
+
     }
 }

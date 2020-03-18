@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.View;
@@ -20,9 +21,10 @@ public class MainActivity extends AppCompatActivity {
         final Button save = (Button) findViewById(R.id.button);
         final Button remove = (Button) findViewById(R.id.button2);
 
+    //TODO: App breaks when a primary key is duplicated.
         save.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
 
+            public void onClick(View v) {
                 String nameAndLastName = String.valueOf(((EditText) findViewById(R.id.editText)).getText());
                 float mark;
                 String markString = String.valueOf(((EditText) findViewById(R.id.editText2)).getText());
@@ -68,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
 
     }
 

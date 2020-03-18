@@ -55,4 +55,13 @@
         app:layout_constraintStart_toEndOf="@+id/button"
         app:layout_constraintTop_toTopOf="@+id/button" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="355dp"
+        android:layout_height="474dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

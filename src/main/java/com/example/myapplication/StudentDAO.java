@@ -9,7 +9,7 @@ import java.util.List;
 
 @Dao
 public interface StudentDAO {
-    @Query("SELECT * FROM student")
+    @Query("SELECT name, mark FROM student")
     List<Student> findAll();
 
     @Insert

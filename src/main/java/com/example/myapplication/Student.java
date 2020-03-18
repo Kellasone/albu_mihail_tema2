@@ -1,22 +1,15 @@
 package com.example.myapplication;
 
+import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity
 public class Student {
-    @PrimaryKey(autoGenerate = true)
-    public int id;
+    @NonNull
+    @PrimaryKey
     public String name;
     public float mark;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
