@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         final MyAdapter studentsAdapter = new MyAdapter(this);
         recyclerView.setAdapter(studentsAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
+        recyclerView.setNestedScrollingEnabled(false);
         final Button save = (Button) findViewById(R.id.button);
         final Button remove = (Button) findViewById(R.id.button2);
 
