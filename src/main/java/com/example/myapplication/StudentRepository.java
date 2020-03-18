@@ -2,6 +2,8 @@ package com.example.myapplication;
 
 import android.os.AsyncTask;
 
+import androidx.lifecycle.LiveData;
+
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
@@ -12,15 +14,8 @@ public class StudentRepository {
         database = ApplicationController.getDatabase();
     }
 
-    public List<Student> findAll(){
-        try {
-            return new FindTask().execute().get();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        return null;
+    public LiveData<List<Student>> findAll(){
+            return database.studentDAO().findAll();
     }
 
     public void remove(final Student student, final OnStudentRepositoryActionListener listener){
@@ -77,12 +72,4 @@ public class StudentRepository {
         }
     }
 
-    private class FindTask extends AsyncTask<Void, Void, List<Student>> {
-
-        @Override
-        protected List<Student> doInBackground(Void... voids) {
-            return database.studentDAO().findAll();
-        }
-
-    }
 }

@@ -54,7 +54,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         return 0;
     }
 
-    public void setUsers(List<Student> students) {
+    public void setStudents(List<Student> students) {
         this.students = students;
         notifyDataSetChanged();
     }
