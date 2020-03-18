@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">App</string>
+    <string name="first_and_last_name">First and Last Name</string>
+    <string name="mark">Mark</string>
+    <string name="remove_user">Remove User</string>
+    <string name="add_user">Add User</string>
+</resources>
