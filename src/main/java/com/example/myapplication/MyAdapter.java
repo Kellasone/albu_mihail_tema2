@@ -25,8 +25,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         layoutInflater = LayoutInflater.from(context);
         mContext = context;
 
-    }
 
+    }
 
     @NonNull
     @Override
